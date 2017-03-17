@@ -12,7 +12,7 @@ Quickly and easily add a rental yield calculator to your website
 
 == Description ==
 
-This plugin, from the creators of [Property Hive](https://wordpress.org/plugins/propertyhive/), allows you to quickly and easily add a rental yield calculator to your website.
+This plugin, from the creators of [Property Hive](https://wordpress.org/plugins/propertyhive/), allows you to quickly and easily add a rental yield calculator to your website by adding the shortcode [rental_yield_calculator] where you want it to appear.
 
 Users simply enter the purchase price and monthly rent then the rental yield is calculated instantly.
 
@@ -36,11 +36,11 @@ Updating should work like a charm; as always though, ensure you backup your site
 
 = The Shortcode =
 
-Simply add the shortcode [rental_yield calculator] where you want it to appear.
+Simply add the shortcode [rental_yield_calculator] where you want it to appear.
 
 == Screenshots ==
 
-1. Once you've added the shortcode the rental_yield calculator becomes avalaible for people to complete
+1. Once you've added the [rental_yield_calculator] shortcode the calculator becomes avalaible for people to complete
 2. Users are instantly shown the rental yield once they've completed the form
 
 == Changelog ==
