@@ -87,30 +87,17 @@ final class PH_Rental_Yield_Calculator {
         wp_enqueue_script( 'ph-rental-yield-calculator' );
 
         ob_start();
-?>
-    <div class="rental-yield-calculator">
 
-        <label><?php echo __( 'Purchase Price', 'propertyhive' ); ?> (&pound;)</label>
-        <input type="text" name="purchase_price" value="">
+        $template = locate_template( array('propertyhive/rental-yield-calculator.php') );
+        if ( !$template )
+        {
+            include( dirname( PH_RENTAL_YEILD_CALCULATOR_PLUGIN_FILE ) . '/templates/rental-yield-calculator.php' );
+        }
+        else
+        {
+            include( $template );
+        }
 
-        <label><?php echo __( 'Monthly Rent', 'propertyhive' ); ?> (&pound;)</label>
-        <input type="text" name="monthly_rent" value="">
-
-        <button><?php echo __( 'Calculate', 'propertyhive' ); ?></button>
-
-        <div class="rental-yield-calculator-results" id="results" style="display:none">
-
-            <h4><?php echo __( 'Results', 'propertyhive' ); ?>:</h4>
-
-            <label><?php echo __( 'Annual Rent', 'propertyhive' ); ?> (&pound;)</label>
-            <input type="text" name="annual_rent" value="" placeholder="" disabled>
-
-            <label><?php echo __( 'Rental Yield', 'propertyhive' ); ?> (%)</label>
-            <input type="text" name="rental_yield" value="" placeholder="" disabled>
-        </div>
-
-    </div>
-<?php
         return ob_get_clean();
     }
 
