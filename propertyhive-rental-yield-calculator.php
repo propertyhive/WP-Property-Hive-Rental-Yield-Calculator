@@ -23,6 +23,16 @@ final class PH_Rental_Yield_Calculator {
      * @var Property Hive The single instance of the class
      */
     protected static $_instance = null;
+
+    /**
+     * @var string
+     */
+    public $id = '';
+
+    /**
+     * @var string
+     */
+    public $label = '';
     
     /**
      * Main Property Hive Rental Yield Calculator Instance
