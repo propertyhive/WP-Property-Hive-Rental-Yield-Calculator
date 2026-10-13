@@ -3,7 +3,7 @@
  * Plugin Name: Property Hive Rental Yield Calculator
  * Plugin Uri: https://wp-property-hive.com/addons/rental-yield-calculator/
  * Description: Quickly and easily add a rental yield calculator to your website using a simple shortcode 
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: PropertyHive
  * Author URI: https://wp-property-hive.com
  */
@@ -17,7 +17,7 @@ final class PH_Rental_Yield_Calculator {
     /**
      * @var string
      */
-    public $version = '1.0.4';
+    public $version = '1.0.5';
 
     /**
      * @var Property Hive The single instance of the class
@@ -57,7 +57,7 @@ final class PH_Rental_Yield_Calculator {
     public function __construct() {
 
         $this->id    = 'rentalyieldcalculator';
-        $this->label = __( 'Rental Yield Calculator', 'propertyhive' );
+        $this->label = 'Rental Yield Calculator';
 
         // Define constants
         $this->define_constants();
@@ -65,10 +65,17 @@ final class PH_Rental_Yield_Calculator {
         // Include required files
         $this->includes();
 
+        add_action( 'init', array( $this, 'init' ), 0 );
+
         add_action( 'wp_enqueue_scripts', array( $this, 'load_rental_yield_calculator_scripts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'load_rental_yield_calculator_styles' ) );
 
         add_shortcode( 'rental_yield_calculator', array( $this, 'propertyhive_rental_yield_calculator_shortcode' ) );
+    }
+
+    public function init() 
+    {
+        $this->label = __( 'Rental Yield Calculator', 'propertyhive' );
     }
 
     /**
